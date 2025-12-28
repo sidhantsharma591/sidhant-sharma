@@ -1,0 +1,12 @@
+imp=[1,2,3,4,5]
+n=len(imp)     #5
+total=0
+for i in imp:
+    total=total+i
+    mean=total/n
+
+    var=0
+    for i in imp:
+        var=var+(i-mean)**2   # **2 ka matlab ha variable*variable
+        std=(var/n)**0.5
+        print(std)
