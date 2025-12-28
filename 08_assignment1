@@ -1,0 +1,26 @@
+actual=[10,20,30]
+pred=[12,18,20]
+n=len(actual)
+m=len(pred)  
+
+if n!=m:
+    print("lists are not equal")
+    
+else:
+    mae=0
+    mse=0
+
+    for i in range(n):
+        error=actual[i]-pred[i]
+
+        if error<0:
+            error=-error
+
+            mae=mae+error
+            mse=mse+(error)**2
+
+            mae=mae/n
+            mse=mse/n
+
+            print("mae:",mae)
+            print("mse:",mse)
