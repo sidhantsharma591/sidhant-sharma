@@ -1,0 +1,24 @@
+nums=[1,2,3,4]
+total=0
+for i in nums:
+    total+=i
+    mean=total/len(nums)
+    
+
+
+    nums.sort()
+    mid=len(nums)/2
+    if len(nums) % 2 == 0:
+    median = (nums[mid - 1] + nums[mid]) / 2
+    else:
+    median = nums[mid]
+
+
+  
+
+    freq={}
+    for i in nums:
+        freq[i]=freq.get(i,0)+1
+        mode=max(freq , key=freq.get)
+
+        print(mean, median , mode)
