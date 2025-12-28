@@ -1,0 +1,8 @@
+imp=[10,20,30,40,50]
+sum=0
+count=0
+for i in imp:
+sum+=i
+count=count+1
+average=sum/count
+print("average of n numbers in imp:",average)
