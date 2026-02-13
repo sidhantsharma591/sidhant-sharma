@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elegant Love Website</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffb199);
+    overflow:hidden;
+}
+
+/* Main Card */
+.card{
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(15px);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    width:350px;
+    color:white;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border:none;
+    border-radius:8px;
+    outline:none;
+}
+
+button{
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+/* Calculate Button */
+#btn{
+    width:100%;
+    background:white;
+    color:#ff4d6d;
+}
+
+#btn:hover{
+    background:#ff4d6d;
+    color:white;
+}
+
+#result{
+    margin-top:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* Profile Button */
+.profile-btn{
+    position:absolute;
+    top:20px;
+    left:20px;
+    background:white;
+    color:black;
+}
+
+/* Profile Panel */
+.profile{
+    position:fixed;
+    left:-270px;
+    top:0;
+    width:260px;
+    height:100%;
+    background:white;
+    color:black;
+    padding:25px;
+    transition:0.4s ease;
+    box-shadow:2px 0 10px rgba(0,0,0,0.3);
+    text-align:center;
+}
+
+.profile-img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.profile h2{
+    margin-bottom:5px;
+}
+
+.profile a{
+    text-decoration:none;
+    color:#ff4d6d;
+    font-weight:bold;
+}
+
+.hobbies{
+    margin-top:15px;
+}
+
+.hobbies p{
+    margin:5px 0;
+}
+
+.close-btn{
+    margin-top:20px;
+    background:#ff4d6d;
+    color:white;
+    width:100%;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Profile Button -->
+<button class="profile-btn" onclick="openProfile()">☰ Profile</button>
+
+<!-- Profile Section -->
+<div class="profile" id="profile">
+    <img src="profile.jpg" alt="Profile Image" class="profile-img">
+
+    <h2>Sidhant</h2>
+
+    <p>
+        <a href="https://www.instagram.com/its_sidhant.7/" target="_blank">
+            @its_sidhant.7
+        </a>
+    </p>
+
+    <div class="hobbies">
+        <p>✈ Travelling</p>
+        <p>🎵 Listening Music</p>
+    </div>
+
+    <button class="close-btn" onclick="closeProfile()">Close</button>
+</div>
+
+<!-- Love Calculator -->
+<div class="card">
+    <h1>❤️ Love Calculator</h1>
+
+    <input type="text" id="name1" placeholder="Your Name">
+    <input type="text" id="name2" placeholder="Partner Name">
+
+    <button id="btn" onclick="calculateLove()">Calculate Love</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+function calculateLove(){
+    let name1 = document.getElementById("name1").value.trim();
+    let name2 = document.getElementById("name2").value.trim();
+
+    if(name1 === "" || name2 === ""){
+        alert("Please enter both names ❤️");
+        return;
+    }
+
+    let percentage = Math.floor(Math.random()*31) + 70;
+
+    document.getElementById("result").innerHTML =
+        "✨ " + percentage + "% Love ✨ <br>" +
+        name1 + " ❤️ " + name2;
+}
+
+function openProfile(){
+    document.getElementById("profile").style.left = "0";
+}
+
+function closeProfile(){
+    document.getElementById("profile").style.left = "-270px";
+}
+</script>
+
+</body>
+</html>
